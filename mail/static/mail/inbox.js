@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Send email
   document.querySelector("#compose-form").onsubmit = function () {
     fetch("/emails", {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         recipients: document.querySelector("#compose-recipients").value,
         subject: document.querySelector("#compose-subject").value,
-        body: document.querySelector("#compose-body").value,
-      }),
+        body: document.querySelector("#compose-body").value
+      })
     })
     .then((response) => response.json())
     .then((result) => {
